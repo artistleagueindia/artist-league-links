@@ -1,44 +1,73 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Artist League Camp — Links</title>
-  <style>
-    body {{ margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #0b3670; color: #fff; display:flex; align-items:center; justify-content:center; min-height:100vh; }}
-    .card {{ width: 420px; background: linear-gradient(180deg,#0b3670 0%, #0a294a 100%); border-radius:14px; padding:26px; box-shadow: 0 12px 30px rgba(0,0,0,0.5); text-align:center; }}
-    img.logo {{ width:120px; height:auto; margin-bottom:12px; }}
-    h1 {{ font-size:20px; margin:6px 0 0 0; letter-spacing:1px; }}
-    h2 {{ font-size:14px; margin:6px 0 18px 0; opacity:0.9; }}
-    a.btn {{ display:block; text-decoration:none; color:#0b3670; background:#ffd166; margin:10px auto; width:86%; padding:12px 8px; border-radius:10px; font-weight:700; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }}
-    .socials {{ margin-top:16px; display:flex; justify-content:center; gap:12px; }}
-    .socials a {{ display:inline-block; width:44px; height:44px; border-radius:8px; background: rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; }}
-    .small {{ font-size:12px; opacity:0.85; margin-top:12px; }}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist League Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card {
+            width: 420px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        .card img.logo {
+            width: 100px;
+            height: auto;
+            margin-top: 20px;
+        }
+        .card h1 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+        }
+        .links a {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .links a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            padding: 15px;
+            font-size: 0.8em;
+            background: #f1f1f1;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <img src="logo.png" class="logo" alt="Artist League Logo" />
-    <h1>ARTIST LEAGUE CAMP</h1>
-    <h2>MUMBAI &amp; PUNE</h2>
-
-    <a class="btn" href="https://forms.gle/rPVnZDTHrfAjVsms9" target="_blank">🎟 Full Camp Registration</a>
-    <a class="btn" href="https://forms.gle/3uTGWu6dGxhuCEBz9" target="_blank" style="background:#ffd16644; color:#fff;">🎫 Passes</a>
-
-    <div class="socials">
-      <a href="https://www.instagram.com/channel/AbYSPT21ZSX_i-20/" target="_blank" title="Instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="IG" width="22">
-      </a>
-      <a href="https://chat.whatsapp.com/EmTLnokUDrPGt9RzzTRbMj" target="_blank" title="WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="22">
-      </a>
-      <a href="https://youtube.com/@artistleagueindia?si=OryIOOyvaqG7LM7b" target="_blank" title="YouTube">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YT" width="22">
-      </a>
+    <div class="card">
+        <img src="logo.png" alt="Artist League Logo" class="logo">
+        <h1>Artist League</h1>
+        <div class="links">
+            <a href="https://instagram.com/artistleagueindia" target="_blank">Instagram</a>
+            <a href="https://youtube.com/@artistleagueindia" target="_blank">YouTube</a>
+            <a href="https://open.spotify.com/artist/xyz" target="_blank">Spotify</a>
+        </div>
+        <footer>© 2025 Artist League India</footer>
     </div>
-
-    <div class="small">Tip: Save this page and share the QR to let people choose links easily.</div>
-  </div>
 </body>
 </html>
