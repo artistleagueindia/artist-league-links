@@ -1,84 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artist League Camp - Mumbai & Pune</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Artist League Camp — Links</title>
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #003366, #0055aa);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+  :root{
+    --blue-1:#012241;
+    --blue-2:#003b79;
+    --accent:#ffd44a;
+    --btn-border: rgba(255,212,74,0.12);
   }
-  img.logo {
-    max-width: 150px;
-    margin-bottom: 20px;
+  html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+  body{
+    background: linear-gradient(180deg,var(--blue-1) 0%, var(--blue-2) 60%);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
   }
-  h1 {
-    font-size: 1.8em;
-    margin-bottom: 5px;
-    text-align: center;
+
+  /* Card */
+  .card{
+    width:100%;
+    max-width:420px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border-radius:18px;
+    box-shadow: 0 10px 30px rgba(2,10,30,0.5);
+    padding:22px;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
   }
-  h2 {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    font-weight: normal;
-    text-align: center;
+
+  /* Soft wave background (svg) */
+  .wave {
+    position:absolute;
+    left:-10%;
+    right:-10%;
+    top:-30%;
+    height:260px;
+    opacity:0.12;
+    z-index:0;
+    transform-origin:center;
+    animation: float 6s ease-in-out infinite;
   }
-  a.button {
-    display: block;
-    background-color: #ffcc00;
-    color: #003366;
-    padding: 15px 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    max-width: 300px;
+  @keyframes float{
+    0%{ transform: translateY(0px) rotate(-1deg); }
+    50%{ transform: translateY(6px) rotate(0.5deg); }
+    100%{ transform: translateY(0px) rotate(-1deg); }
   }
-  a.button:hover {
-    background-color: #ffdd33;
+
+  /* Logo (inline SVG sits above headline) */
+  .brand {
+    position:relative;
+    z-index:2;
+    margin-bottom:6px;
   }
-  .socials {
-    margin-top: 30px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+  .brand svg { width:120px; height:auto; display:block; margin:0 auto; filter: drop-shadow(0 6px 20px rgba(0,122,204,0.18)); }
+
+  h1{
+    margin:8px 0 2px;
+    font-size:18px;
+    letter-spacing:2px;
+    font-weight:700;
+    z-index:2;
   }
-  .socials a img {
-    width: 40px;
-    height: 40px;
+  h2{
+    margin:0 0 18px;
+    font-weight:500;
+    color:rgba(255,255,255,0.92);
+    font-size:14px;
+  }
+
+  /* Buttons: transparent with subtle borders */
+  .btn {
+    display:block;
+    width:100%;
+    max-width:320px;
+    margin:10px auto;
+    padding:14px 18px;
+    border-radius:12px;
+    text-decoration:none;
+    color: #fff;
+    font-weight:700;
+    letter-spacing:0.6px;
+    border: 1.5px solid rgba(255,255,255,0.12);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    box-shadow: 0 6px 18px rgba(3,10,30,0.45), inset 0 -1px 0 rgba(255,255,255,0.02);
+    transition: all 220ms ease;
+    position:relative;
+    z-index:2;
+  }
+  .btn.primary { border-color: rgba(0,170,255,0.18); }
+  .btn:hover{
+    transform: translateY(-4px);
+    border-color: rgba(255,212,74,0.95);
+    background: linear-gradient(90deg, rgba(0,170,255,0.14), rgba(0,120,200,0.14));
+    box-shadow: 0 12px 30px rgba(0,50,100,0.45);
+  }
+
+  /* Social row */
+  .socials { display:flex; gap:16px; justify-content:center; margin-top:18px; z-index:2; position:relative; }
+  .socials a{
+    width:46px; height:46px; border-radius:10px;
+    display:inline-flex; align-items:center; justify-content:center;
+    background: rgba(255,255,255,0.04);
+    text-decoration:none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    border:1px solid rgba(255,255,255,0.04);
+  }
+  .socials a:hover{ transform: translateY(-4px) scale(1.06); box-shadow: 0 8px 20px rgba(0,122,204,0.18); }
+  .socials svg{ width:22px; height:22px; fill:#fff; display:block; }
+
+  /* small note */
+  .note{ margin-top:14px; font-size:12px; color: rgba(255,255,255,0.75); z-index:2; }
+
+  /* Responsive adjustments */
+  @media (max-width:400px){
+    .card{ padding:18px; border-radius:14px; }
+    .brand svg{ width:108px; }
+    .btn{ padding:12px 14px; border-radius:10px; }
+    .socials a{ width:44px; height:44px; }
   }
 </style>
 </head>
 <body>
 
-<img src="logo.png" alt="Artist League Logo" class="logo">
-<h1>ARTIST LEAGUE CAMP</h1>
-<h2>MUMBAI & PUNE</h2>
+  <div class="card" role="main">
+    <!-- Soft animated wave (subtle) -->
+    <svg class="wave" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0" stop-color="#00aaff"/>
+          <stop offset="1" stop-color="#0066bb"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,80 C180,200 360,0 600,80 C860,160 1040,60 1200,100 L1200 0 L0 0 Z" fill="url(#g1)"></path>
+    </svg>
 
-<a href="https://forms.gle/rPVnZDTHrfAjVsms9" class="button">FULL CAMP</a>
-<a href="https://forms.gle/3uTGWu6dGxhuCEBz9" class="button">PASSES</a>
+    <!-- Logo (inline SVG placeholder: replace with your logo SVG if available) -->
+    <div class="brand" aria-hidden="false">
+      <!-- Example white wordmark SVG placeholder -->
+      <svg viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Artist League">
+        <g fill="#ffffff">
+          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Poppins, Inter, Arial" font-weight="700" font-size="18">ARTIST LEAGUE</text>
+        </g>
+      </svg>
+    </div>
 
-<div class="socials">
-  <a href="https://www.instagram.com/channel/AbYSPT21ZSX_i-20/" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-  </a>
-  <a href="https://chat.whatsapp.com/EmTLnokUDrPGt9RzzTRbMj" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-  <a href="https://youtube.com/@artistleagueindia?si=OryIOOyvaqG7LM7b" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
-  </a>
-</div>
+    <h1>ARTIST LEAGUE CAMP</h1>
+    <h2>MUMBAI &amp; PUNE</h2>
+
+    <!-- Buttons -->
+    <a class="btn primary" href="https://forms.gle/rPVnZDTHrfAjVsms9" target="_blank" rel="noopener">FULL CAMP</a>
+    <a class="btn" href="https://forms.gle/3uTGWu6dGxhuCEBz9" target="_blank" rel="noopener">PASSES</a>
+
+    <!-- Social icons row (inline SVGs, white) -->
+    <div class="socials" aria-label="Social links">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/channel/AbYSPT21ZSX_i-20/" target="_blank" rel="noopener" title="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A4.8 4.8 0 1 0 16.8 13 4.8 4.8 0 0 0 12 8.2zm6.4-2.6a1 1 0 1 1-1 1 1 1 0 0 1 1-1zM12 10.8A1.2 1.2 0 1 1 10.8 12 1.2 1.2 0 0 1 12 10.8z"/>
+        </svg>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://chat.whatsapp.com/EmTLnokUDrPGt9RzzTRbMj" target="_blank" rel="noopener" title="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .2 5.2.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.6-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.2 11.9-11.8 0-3.2-1.4-6.2-4-8.4zM12 21.4c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.9 1 1-3.6-.2-.4A8.8 8.8 0 0 1 3.2 11.8 8.9 8.9 0 0 1 12 2.9c2.4 0 4.7.9 6.4 2.6 1.7 1.7 2.6 4 2.6 6.4 0 5.1-4.1 9.5-9 9.5z"/>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com/@artistleagueindia?si=OryIOOyvaqG7LM7b" target="_blank" rel="noopener" title="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1-3-.2-7.5-.2-7.5-.2h-.1s-4.5 0-7.5.2c-.4.1-1.3.1-2.1 1-.6.7-.8 2.3-.8 2.3S1 8 1 9.8v2.4c0 1.8.6 3.6.6 3.6s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.1 7.1.2 7.1.2s4.6 0 7.5-.2c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.6-1.8.6-3.6V9.8c0-1.8-.6-3.6-.6-3.6zM9.5 15.2V8.8l6.2 3.2-6.2 3.2z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="note">Tap a button to register — or scan the QR to open this page.</div>
+  </div>
 
 </body>
 </html>
